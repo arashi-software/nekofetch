@@ -5,7 +5,7 @@
 ## Dependencies
 - noto-fonts-cjk
 - wmctrl
-- nim
+- nim (makedep)
 ## Install
 ```bash
 git clone --depth 1 https://github.com/arashi-software/nekofetch && cd nekofetch

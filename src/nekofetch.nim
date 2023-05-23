@@ -1,18 +1,19 @@
-import os, osproc, strutils, terminal
+import osproc, strutils, terminal, re
 
 const ascii = staticRead("./asciiart.txt").splitLines
 
+proc grep(text: string, regex: Regex): string =
+  for line in text.splitLines():
+    if line.match(regex): return line
+
 proc getOsName(): string =
-  if defined(windows):
-    return "windows"
-  elif defined(macosx):
-    return "macos"
-  elif defined(bsd):
-    return "bsd"
+  if defined(windows): return "windows"
+  elif defined(macosx): return "macos"
+  elif defined(bsd): return "bsd"
   elif defined(linux):
-    return execCmdEx("cat /etc/os-release | grep ^ID=").output.split("=")[1].replace("\"", "").toLower().strip()
-  else:
-    return ""
+    return readFile("/etc/os-release").grep(re(r"^ID="))
+     .split("=")[1].replace("\"", "").toLower().strip()
+  else: return ""
 
 proc getKernelVersion(): string =
   if defined(windows):
