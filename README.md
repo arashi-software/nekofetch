@@ -1,10 +1,9 @@
 # nekofetch
 ### Because who doesn't want their fetch tool to have cat ascii
-##### Nekofetch is a simple little fetch tool implemented in under 30 lines of nim, and is fast enough to add to your shell config
+##### Nekofetch is a simple little fetch tool implemented in under 60 lines of nim, and is fast enough to add to your shell config
 ---
 ## Dependencies
 - noto-fonts-cjk
-- wmctrl
 - nim (makedep)
 ## Install
 ```bash

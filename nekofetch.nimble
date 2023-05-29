@@ -1,4 +1,3 @@
-import distros
 # Package
 
 version       = "0.1.1"
@@ -12,5 +11,4 @@ bin           = @["nekofetch"]
 
 # Dependencies
 
-requires "nim >= 1.4.8"
-foreignDep "wmctrl"
+requires "nim >= 1.4.8", "xcb >= 0.2.0"
